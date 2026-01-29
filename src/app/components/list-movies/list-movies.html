@@ -1,0 +1,17 @@
+<ul class="movie-list">
+  @for (movie of movieService.movies; track $index) {
+    <li class="movie-card">
+      <img class="movie-image" [src]="movie.image" [alt]="movie.name">
+
+      <div class="movie-info">
+        <h2 class="movie-title">{{ movie.name }}</h2>
+        <p class="movie-director"><strong>Director:</strong> {{ movie.director }}</p>
+        <p class="movie-duration"><strong>Duración:</strong> {{ movie.duration }} min</p>
+      </div>
+
+      <a class="movie-imdb-btn" [href]="movie.imdbUrl" target="_blank" rel="noopener">
+        Ver en IMDB
+      </a>
+    </li>
+  }
+</ul>

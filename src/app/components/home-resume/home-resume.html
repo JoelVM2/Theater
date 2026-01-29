@@ -1,0 +1,22 @@
+<div class="home-resume">
+  <div class="summary">
+    <h2>Total de Películas: {{ totalMovies }}</h2>
+  </div>
+
+  <div class="top-movies">
+    <h3>Películas Destacadas</h3>
+    <div class="top-movies-list">
+      @for (movie of topMovies; track $index) {
+        <div class="movie-card">
+          <img [src]="movie.image" [alt]="movie.name" class="movie-image">
+          <h4>{{ movie.name }}</h4>
+          <p><strong>Director:</strong> {{ movie.director }}</p>
+          <p><strong>Duración:</strong> {{ movie.duration }} min</p>
+          <a [href]="movie.imdbUrl" target="_blank" rel="noopener" class="btn-imdb">
+            Ver en IMDB
+          </a>
+        </div>
+      }
+    </div>
+  </div>
+</div>

@@ -1,1 +1,52 @@
-<p>movie-form works!</p>
+<app-header></app-header>
+<div class="form-page">
+
+<form [formGroup]="movieForm" (ngSubmit)="handleSubmit()">
+
+<fieldset>
+  <label for="movieName">Movie Name</label>
+  <input id="movieName" type="text" formControlName="name">
+  @if(name.invalid && name.touched) {
+  <p class="field-error">Name is required</p>
+  }
+</fieldset>
+
+<fieldset>
+  <label for="movieDuration">Duration</label>
+  <input id="movieDuration" type="text" formControlName="duration">
+  @if(duration.hasError("required") && duration.touched) {
+  <p class="field-error">Name is required</p>
+  } @else if(duration.hasError("max") && duration.touched){
+     <p class="field-error">Duration cannot be longer than 300 minutes</p>
+  }
+</fieldset>
+
+<fieldset>
+  <label for="movieDirector">Director</label>
+  <input id="movieDirector" type="text" formControlName="director">
+  @if(director.invalid && director.touched) {
+  <p class="field-error">Director is required</p>
+  }
+</fieldset>
+
+
+<fieldset>
+  <label for="movieImage">Image Url</label>
+  <input id="movieImage" type="text" formControlName="image">
+  @if(image.invalid && image.touched) {
+  <p class="field-error">Image url is required</p>
+  }
+</fieldset>
+
+<fieldset>
+  <label for="movieImdbUrl">IMDB Url</label>
+  <input id="movieImdbUrl" type="text" formControlName="imdbUrl">
+  @if(imdbUrl.invalid && imdbUrl.touched) {
+  <p class="field-error">imdb url is required</p>
+  }
+</fieldset>
+
+<button type="submit" [disabled]="movieForm.invalid">Create Movie</button>
+</form>
+
+</div>
