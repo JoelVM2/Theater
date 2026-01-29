@@ -14,6 +14,7 @@ export class HomeResume {
     this.loadSummary();
   }
 
+  // Cambia el atributo de destacado
   toggleFeatured(movie: any) {
     movie.featured = !movie.featured;
     this.updateTopMovies();
@@ -23,7 +24,8 @@ export class HomeResume {
     this.totalMovies = this.movieService.movies.length;
     this.updateTopMovies();
   }
-
+  
+  // Actualiza las películas por el destacadol.
   private updateTopMovies() {
     this.topMovies = this.movieService.movies.filter(movie => movie.featured);
   }

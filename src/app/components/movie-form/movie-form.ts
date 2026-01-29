@@ -18,6 +18,7 @@ export class MovieForm {
   image: FormControl;
   imdbUrl: FormControl;
 
+  // Constructor del formulario, ponemos la validaciones, y creamos el formulario
   constructor(public movieService: MovieService) {
     this.name = new FormControl('',Validators.required);      
     this.duration = new FormControl('',[
@@ -37,6 +38,7 @@ export class MovieForm {
     });
   }
 
+  // Manejo de la respuesta del formulario
   handleSubmit() {
     this.movieService.addMovie(this.movieForm.value);
     this.movieForm.reset();

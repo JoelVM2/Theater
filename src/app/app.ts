@@ -4,7 +4,7 @@ import { MovieForm } from './components/movie-form/movie-form';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,MovieForm],
+  imports: [RouterOutlet],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

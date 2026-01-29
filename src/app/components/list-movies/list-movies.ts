@@ -10,6 +10,7 @@ import { MovieService } from '../../services/movie-service';
 export class ListMovies {
 constructor (public movieService: MovieService) {}
 
+// Cambia el destadado
 toggleFeatured(movie: any) {
   movie.featured = !movie.featured;
 }
