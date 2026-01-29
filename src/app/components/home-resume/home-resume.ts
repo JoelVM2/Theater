@@ -14,18 +14,18 @@ export class HomeResume {
     this.loadSummary();
   }
 
+  toggleFeatured(movie: any) {
+    movie.featured = !movie.featured;
+    this.updateTopMovies();
+  }
+
   loadSummary() {
     this.totalMovies = this.movieService.movies.length;
-
-    const movies = [...this.movieService.movies];
-    this.shuffleArray(movies);
-    this.topMovies = movies.slice(0, 2);
+    this.updateTopMovies();
   }
 
-  private shuffleArray(array: any[]) {
-    for (let i = array.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [array[i], array[j]] = [array[j], array[i]];
-    }
+  private updateTopMovies() {
+    this.topMovies = this.movieService.movies.filter(movie => movie.featured);
   }
+
 }

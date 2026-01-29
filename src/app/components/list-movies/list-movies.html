@@ -12,6 +12,13 @@
       <a class="movie-imdb-btn" [href]="movie.imdbUrl" target="_blank" rel="noopener">
         Ver en IMDB
       </a>
+
+       <button 
+        class="featured-btn" 
+        [class.active]="movie.featured" 
+        (click)="toggleFeatured(movie)">
+        ★ Destacado
+      </button>
     </li>
   }
 </ul>

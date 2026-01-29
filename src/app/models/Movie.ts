@@ -4,4 +4,5 @@ duration: number;
 director: string;
 image: string;
 imdbUrl: string;
+featured: boolean;
 }

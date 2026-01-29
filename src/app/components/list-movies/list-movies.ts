@@ -10,4 +10,8 @@ import { MovieService } from '../../services/movie-service';
 export class ListMovies {
 constructor (public movieService: MovieService) {}
 
+toggleFeatured(movie: any) {
+  movie.featured = !movie.featured;
+}
+
 }
