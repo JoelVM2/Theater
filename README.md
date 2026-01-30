@@ -105,7 +105,7 @@ Definidas en `app.routes.ts`:
 
 ## Tecnologías Usadas
 
-* **Angular** (standalone components)
+* **Angular**
 * **TypeScript**
 * **Reactive Forms**
 * **Angular Router**
@@ -126,17 +126,3 @@ Luego abre en el navegador:
 http://localhost:4200
 ```
 
----
-
-## Notas
-
-* El estado se mantiene en memoria (no hay backend)
-* Ideal como proyecto educativo para practicar:
-
-  * Servicios
-  * Formularios reactivos
-  * Componentes standalone
-  * Directivas estructurales (`@for`, `@if`)
-
----
- ¡Proyecto perfecto para aprender Angular de forma práctica!
